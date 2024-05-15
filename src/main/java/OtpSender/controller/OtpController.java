@@ -25,7 +25,6 @@ public class OtpController {
     @PostMapping("send/otp")
     public ResponseEntity<?> sendOtp(@RequestBody OtpRequest otpRequest){
         try{
-            otpRequest.setOtp(otpSender.generateOtp());
             otpSender.sendOtp(otpRequest);
         return new ResponseEntity<>(new ApiResponse("Sent Successfully",true), CREATED);
     }catch (Exception e){

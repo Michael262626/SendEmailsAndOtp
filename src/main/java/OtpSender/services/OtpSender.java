@@ -24,8 +24,8 @@ public class OtpSender {
     public void sendOtp(OtpRequest otpRequest) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(otpRequest.getEmail());
-        message.setSubject(otpRequest.getOtp());
-        message.setText("Your otp is"+otpRequest.getOtp());
+        message.setSubject("Your one time Otp");
+        message.setText("Your otp is"+generateOtp());
         javaMailSender.send(message);
     }
 }
